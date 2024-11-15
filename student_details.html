@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Student Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body id="bg">
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='path/to/your/logo.png') }}" alt="Logo">
+        </div>
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/teachers">Teachers Details</a></li>
+            <li><a href="/students">Students Details</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h3>{{ student.full_name }}'s Details</h3>
+        <ul class="nav nav-tabs" id="studentDetailsTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="basic-tab" data-toggle="tab" href="#basic" role="tab" aria-controls="basic" aria-selected="true">Basic Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="family-tab" data-toggle="tab" href="#family" role="tab" aria-controls="family" aria-selected="false">Family Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="additional-tab" data-toggle="tab" href="#additional" role="tab" aria-controls="additional" aria-selected="false">Additional Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="grades-tab" data-toggle="tab" href="#grades" role="tab" aria-controls="grades" aria-selected="false">Grades</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="studentDetailsTabsContent">
+            <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="basic-tab">
+                <p><strong>Full Name:</strong> {{ student.full_name }}</p>
+                <p><strong>Class:</strong> {{ student.class_.class_id }}</p>
+                <p><strong>Section:</strong> {{ student.section }}</p>
+                <p><strong>Gender:</strong> {{ student.gender.name }}</p>
+            </div>
+            <div class="tab-pane fade" id="family" role="tabpanel" aria-labelledby="family-tab">
+                <p><strong>Father's Name:</strong> {{ family.father_name }}</p>
+                <p><strong>Mother's Name:</strong> {{ family.mother_name }}</p>
+                <p><strong>Father's Phone:</strong> {{ family.father_phone }}</p>
+                <p><strong>Social Category:</strong> {{ family.social_category }}</p>    
+            </div>
+            <div class="tab-pane fade" id="additional" role="tabpanel" aria-labelledby="additional-tab">
+                <p><strong>Admission No:</strong> {{ additional.admission_no }}</p>
+                <p><strong>DOB:</strong> {{ additional.dob.strftime('%Y-%m-%d') }}</p>
+                <p><strong>Admission Date:</strong> {{ additional.admission_date.strftime('%Y-%m-%d') }}</p>
+            </div>
+
+            <div class="tab-pane fade" id="grades" role="tabpanel" aria-labelledby="grades-tab">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>PT1</th>
+                            <th>NB1</th>
+                            <th>SubEn1</th>
+                            <th>Term1</th>
+                            <th>Total1</th>
+                            <th>PT2</th>
+                            <th>NB2</th>
+                            <th>SubEn2</th>
+                            <th>Term2</th>
+                            <th>Total2</th>
+                            <th>Gtotal</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for grade in grades %}
+                        <tr>
+                            <td>{{ grade.subject.subject_name }}</td>
+                            <td>{{ grade.period_test_1 }}</td>
+                            <td>{{ grade.notebook_1 }}</td>
+                            <td>{{ grade.sub_en_1 }}</td>
+                            <td>{{ grade.term_1 }}</td>
+                            <td>{{ grade.total_1 }}</td>
+                            <td>{{ grade.period_test_2 }}</td>
+                            <td>{{ grade.notebook_2 }}</td>
+                            <td>{{ grade.sub_en_2 }}</td>
+                            <td>{{ grade.term_2 }}</td>
+                            <td>{{ grade.total_2 }}</td>
+                            <td>{{ grade.gtotal }}</td>
+                            <td>{{ grade.percentage }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+                <a class ="add-button" href="{{ url_for('enter_marks', student_id=student.student_id) }}">Enter Marks</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.5/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classes</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Assuming you have a CSS file -->
+</head>
+<body>
+    <h1>Classes</h1>
+    <ul>
+        {% for class in classes %}
+            <li><a href="/classes/{{ class.class_id }}/students">{{ class.class_id }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,363 @@
+body {
+    font-family: 'Comfortaa', sans-serif;
+    background-size: cover;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+}
+
+body#home-page {
+    background-image: url('background.jpg');
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent !important;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow below the navbar */
+    position: relative; /* Ensures the shadow effect is properly applied */
+    z-index: 1000; /* Ensures the navbar stays above all other content */
+}
+.logo img {
+    height: 50px;
+}
+.navbar li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.navbar li a {
+    color: white; /* Keeps the text color white for contrast against the theme */
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s; /* Adds transition for color as well */
+    border-radius: 8px; /* Adds rounded corners to match other elements like buttons and inputs */
+}
+
+.navbar li a:hover, .navbar li a:focus {
+    background-color: #7daca9; /* A color from your theme for hover and focus */
+    color: #ffffff; /* Ensures text color remains white on hover/focus for readability */
+    transform: scale(1.1); /* Optional: Slightly enlarges the link on hover/focus for a subtle interaction effect */
+}
+
+/* General form control styling, likely already exists */
+.form-ctrl {
+    display: block;
+    width: 40%;
+    margin: 20px auto;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Specific styles for the select dropdown to ensure it matches the search bar aesthetics */
+#searchType {
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    border: 1px solid #ced4da; /* Matching the input border */
+    border-radius: 0.25rem; /* Rounded corners like the search input */
+    -webkit-appearance: none; /* Removes default styling specific to WebKit browsers */
+    -moz-appearance: none; /* Removes default styling specific to Mozilla browsers */
+    appearance: none; /* Standard property for removing default browser styling */
+    padding-right: 2.25rem; 
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center; /* Positions the custom icon */
+    background-size: 16px 12px; /* Adjust as needed based on your icon's dimensions */
+}
+
+/* Hover and focus styles for the select element */
+#searchType:hover, #searchType:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+
+
+.search-container, .search-add-container {
+    text-align: center;
+    margin: 20px 0;
+}
+.search-container input[type="text"], .search-form input[type="text"], .form-group input, .form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 40%;
+    display: block; /* Makes margin auto applicable */
+    margin: 20px auto; /* Adds margin to the top/bottom and auto margin to left/right to center the element */
+    border-radius: 8px; /* Adds curves to the box */
+    box-shadow: 10 10 8px 0 rgba(0, 0, 0, 0.2); /* Adds an outer glow effect */
+    background-color: #dee2e6;
+    text-align: center; 
+}
+
+.search-button {
+    background-color: #99c2a2; /* Your theme's primary color */
+    color: white; /* Text color for contrast */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Adjust padding to your preference */
+    border-radius: 8px; /* Rounded corners to match form inputs */
+    font-weight: bold; /* Optional: makes the text slightly bolder */
+    cursor: pointer; /* Changes the cursor to indicate it's clickable */
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center; /* Smooth transition for hover effects */
+}
+
+.search-button:hover, .search-button:focus {
+    background-color: #7daca9; /* A slightly darker shade for hover/focus states */
+    transform: scale(1.05); /* Slightly enlarges the button on hover/focus */
+    outline: none; /* Removes the outline to maintain the style */
+}
+
+.welcome-message, h2 {
+    text-align: center;
+    padding: 50px 0;
+    color: #ffffff; /* Consider a color that fits your theme better or remains black for contrast */
+    font-size: 1.5rem; /* Makes the text larger for emphasis */
+    font-weight: 300; /* Lighter font-weight, assuming 'Roboto' has this weight available */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+    margin: auto; /* Center align if inside a flex or grid container */
+    max-width: 80%; /* Limits the width of the welcome message container */
+    border-radius: 15px; /* Soft rounded corners for the background */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); Subtle outer shadow for a 'lifted' effect */
+}
+
+/* teachers */
+.add-button {
+    background-color: #68cf72; /* Different color for differentiation */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px; /* Reduced padding for a smaller button */
+    border-radius: 8px; /* Maintains consistency with theme */
+    transition: background-color 0.3s;
+    text-decoration: none; /* Removes underline from the link */
+    display: inline-block; /* Ensures button-like appearance */
+    margin-left: auto; /* Right-aligns the button within the flex container */
+}
+
+.adad {
+    text-align:right;
+    margin-top: -22.5px;
+}
+
+.add-button:hover {
+    background-color: #7a4c4c; /* Slightly darker shade on hover */
+}
+
+
+.table-container {
+    padding: 0 20px; /* Adds padding on both sides of the table */
+    overflow-x: auto; /* Ensures the table is scrollable horizontally on smaller screens */
+}
+
+/* Table Styles */
+.table {
+    background-color: #f0f4f8;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto; /* Centers the table and adds vertical spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow for depth */
+}
+
+.table th, .table td {
+    border: 1px solid #ccc;
+    padding: 15px; /* Increased padding for better cell readability */
+    text-align: left;
+}
+
+.table thead th {
+    background-color: #99c2a2;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+/* add teacher */
+.form-container {
+    background-color: white; 
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%; /* Adjusts the width of the form container */
+    max-width: 600px; /* Ensures the form doesn't get too wide on larger screens */
+    border-radius: 8px; /* Adds rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.form-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Additional space above the table */
+}
+
+.form-container th, .form-container td {
+    padding: 10px; /* Padding inside table cells for spacing */
+    text-align: left; /* Aligns text to the left in table cells */
+}
+
+.form-container td {
+    border-top: 1px solid #eee; /* Adds a subtle line between rows for better visual separation */
+}
+
+/* Styling for input fields within the table */
+.form-container input[type="text"], .form-container input[type="number"] {
+    width: calc(100% - 22px); /* Adjusts width to account for padding and border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Rounded corners for inputs */
+    box-sizing: border-box; /* Ensures padding does not add to the total width */
+}
+
+h3 {
+    text-align: center;
+    padding: 50px 0;
+    color: #000000; /* Consider a color that fits your theme better or remains black for contrast */
+    font-size: 1.5rem; /* Makes the text larger for emphasis */
+    font-weight: 500; /* Lighter font-weight, assuming 'Roboto' has this weight available */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+    margin: auto; /* Center align if inside a flex or grid container */
+    max-width: 80%; /* Limits the width of the welcome message container */
+}
+
+
+
+
+/* Students */
+body#bg {
+    font-family: 'Comfortaa', sans-serif;
+    background-size: cover;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    background-image: url('background.jpg');
+}
+
+.add-stu-button-container {
+    text-align: center;
+    margin: 20px 0; 
+}
+
+.add-stu-button {
+    background-color: #11b334; /* Primary theme color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px; /* Rounded corners */
+    text-decoration: none; /* Removes underline from link */
+    display: inline-block; /* Allows for padding and margin like a button */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.add-stu-button:hover {
+    background-color: white;
+    color: #11b334; 
+}
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.result-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px; /* Space between cards */
+    width: 90%;
+    max-width: 600px; /* Maximum width for larger screens */
+    box-shadow: 0 2px 4px rgba(0, 0,  0, 0.1);
+}
+
+.result-card h4, .result-card a {
+    margin: 0; /* Removes default margin */
+    color: #333; /* Dark color for text */
+}
+
+.result-card a {
+    color: #000000; /* Primary theme color for links */
+    text-decoration: none; /* No underline */
+    display: block;
+}
+
+.result-card a:hover {
+    text-decoration: underline; 
+}
+
+/* Student Details */
+
+.container {
+    background-color: #ffffff; /* Provides a contrast against potentially darker backgrounds */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for modern look */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-top: 20px;
+    width: auto; /* Adjust width as needed */
+    max-width: 90%; /* Prevents the container from being too wide on large screens */
+}
+
+.tab-content {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 10px; /* Space between tabs and content */
+    background-color: #f9f9f9; /* Slightly off-white for subtle distinction */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.marks-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+.submit-group {
+    justify-content: center;
+    display: flex;
+}
+
+/* Custom Card Style 
+.card {
+    border: none; Remove default border 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+}
+
+.card-header {
+    background-color: #99c2a2;
+    color: white;
+}
+
+.form-control {
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+}
+ */

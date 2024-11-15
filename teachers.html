@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teachers Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body id="bg">
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='path/to/your/logo.png') }}" alt="Logo">
+        </div>
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/teachers">Teachers Details</a></li>
+            <li><a href="/students">Students Details</a></li>
+        </ul>
+    </nav>
+    <div class="search-container">
+        <form method="POST" action="{{ url_for('teachers_details') }}">
+            <input type="text" name="search" placeholder="Search teachers by name...">
+            <button class="search-button" type="submit">Search</button>
+        </form>
+    </div>
+    <div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name <div class="adad"><a href="/teachers/add" class="add-button">Add New Teacher</a> </th>
+                <th>Age</th>
+                <th>Phone</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td>{{ teacher.full_name }}</td>
+                <td>{{ teacher.age }}</td>
+                <td>{{ teacher.phone }}</td>
+                <td>{{ teacher.gender.name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>

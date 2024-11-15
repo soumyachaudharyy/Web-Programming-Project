@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Prakash Bharti School</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body id="home-page">
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='path/to/your/logo.png') }}" alt="Logo" />
+        </div>
+        <ul class="navbar">
+            <li><a href="/teachers">Teachers Details</a></li>
+            <li><a href="/students">Students Details</a></li>
+        </ul>
+    </nav>
+    <div class="welcome-message">
+        <h1>Welcome to Prakash Bharti School</h1>
+    </div>
+    <div class="search-container">
+        <form onsubmit="redirectToPage(); return false;">
+            <div class="input-group mb-3">
+                <select class="form-ctrl" id="searchType">
+                    <option selected>Search for...</option>
+                    <option value="teacher">Teacher Details</option>
+                    <option value="students">Student Search</option>
+                    <option value="addstu">Add Student</option>
+                    <option value="addteacher">Add Teacher</option>
+                </select>
+                
+                <div class="input-group-append">
+                    <button class="add-button" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        function redirectToPage() {
+            var searchType = document.getElementById('searchType').value;
+            var url = '';
+        
+            switch(searchType) {
+                case 'teacher':
+                    url = '/teachers';
+                    break;
+                case 'students':
+                    url = '/students'; 
+                    break;
+                case 'addstu':
+                    url = '/add_student'; 
+                    break;
+                case 'addteacher':
+                    url = '/add_teacher';
+                    break;
+                default:
+                    url = '/';
+                    break;
+            }
+            window.location.href = url;
+        }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.5/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

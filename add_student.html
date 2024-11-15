@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body id="bg">
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='path/to/your/logo.png') }}" alt="Logo">
+        </div>
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/teachers">Teachers Details</a></li>
+            <li><a href="/students">Students Details</a></li>
+        </ul>
+    </nav>
+    <div class="form-container">
+        <h3>Add New Student</h3>
+        <form action="" method="post">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>Full Name:</th>
+                        <td><input type="text" name="full_name" class="form-control" required></td>
+                    </tr>
+                    <tr>
+                        <th>Class ID:</th>
+                        <td><input type="text" name="class_id" class="form-control" required></td>
+                    </tr>
+                    <tr>
+                        <th>Section:</th>
+                        <td><input type="text" name="section" class="form-control" required></td>
+                    </tr>
+                    <tr>
+                        <th>Gender:</th>
+                            <td><input type="text" id="gender" name="gender"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="add-button">Submit</button>
+        </form>
+    </div>
+    
+</body>
+</html>
+
